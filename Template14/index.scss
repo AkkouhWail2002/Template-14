@@ -1,0 +1,1043 @@
+$text-color:#ededed;
+$second-color:#00abf0;
+$primary-bg-color:#081b29;
+$second-bg-color:#112e42;
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+.title{
+    font-size: 60px;
+    text-align: center;
+    text-transform: capitalize;
+    color: $text-color;
+    @media (max-width:992px) {
+        font-size: 50px;
+    }
+    @media (max-width:767px) {
+        font-size: 40px;
+    }
+    span{
+        color: $second-color;
+    }
+    
+}
+.pad{
+    padding: {
+        left: 8%;
+        right: 8%;
+    }
+}
+
+#landing-page{
+    width: 100%;
+    height: 100vh;
+    background-color: #081b29;
+    position: relative;
+    .side-bar{
+        width: 100%;
+        height: 12%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        @extend .pad;
+        background-color: $primary-bg-color;
+        z-index: 5;
+        h1{
+            text-transform: capitalize;
+            color: $text-color;
+            font-size: 40px;
+        }
+        .links{
+            width: 60%;
+            height: 80%;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            ul{
+                width: 70%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                li{
+                    a{
+                        text-transform: capitalize;
+                        font-size: 17.5px;
+                        color: $text-color;
+                        font-weight: bold;
+                        transition-duration: 0.5s;
+                    }
+                    &.active{
+                        a{
+                            color: $second-color;
+                        }
+                    }
+                    &:hover{
+                        a{
+                            color: $second-color;
+                        }
+                    }
+                }
+            }
+            .img{
+                width: 15%;
+                height: 80%;
+                visibility: hidden;
+                cursor: pointer;
+                position: relative;
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    &:first-child{
+                        display: block;
+                        z-index: 10;
+                    }
+                    &:last-child{
+                        display: none;
+                        z-index: 0;
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        width: 100%;
+        height: 75%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @extend .pad;
+        .text{
+            width: 60%;
+            height: 100%;
+            // background-color: yellow;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            h1{
+                text-transform: capitalize;
+                color: $text-color;
+                font-size: 60px;
+                // margin-bottom: 1%;
+            }
+            h2{
+                color: #081b29;
+                text-transform: capitalize;
+                text-shadow: 0px 0px 2px #00abf0;
+                font-size: 35px;
+                margin-bottom: 5%;
+            }
+            p{
+                font-size: 15px;
+                line-height: 1.5;
+                color: #ededed6b;
+                margin-bottom: 5%;
+                &::first-letter{
+                    text-transform: capitalize;
+                }
+            }
+            .buttons{
+                // background-color: red;
+                width: 50%;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                >button{
+                    width: 40%;
+                    height: 80%;
+                    border-radius: 10px;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    transition-duration: 0.5s;
+
+                    &:first-of-type{
+                        background-color: $second-color;
+                        border: none;
+                        color: $primary-bg-color;
+                        &:hover{
+                            background-color: transparent;
+                            border: 2px $second-color solid;
+                            color: $second-color;
+                        }
+                    }
+                    &:last-of-type{
+                        background-color: transparent;
+                        border: 2px $second-color solid;
+                        color: $second-color;
+                        &:hover{
+                            background-color: $second-color;
+                            border: none;
+                            color: $primary-bg-color;
+                        }
+                    }
+                }
+            }
+            .imgs{
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    transition-duration: 2s;
+                    margin-right: 10px;
+                    &:hover{
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+        img{
+            width: 450px;
+            height: 450px;
+        }
+    }
+    #menu{
+        width: 100%;
+        height: 70%;
+        position: fixed;
+        background-color: $second-bg-color;
+        z-index: 3;
+        margin-top: 7%;
+        ul{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(5,20%);
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a{
+                    text-transform: capitalize;
+                    color: #ededed;
+                    font-weight: bold;
+                }
+                &:hover{
+                    background-color: $primary-bg-color;
+                    a{
+                        color: $second-color;
+                    }
+                }
+            }
+        }
+        transform: translateX(-100%);
+        transition-duration: 0.5s;
+    }
+    @media (max-width:992px) {
+        .side-bar{
+            h1{
+                font-size: 35px;
+            }
+            .links{
+                flex-direction: row;
+                .img{
+                    visibility: visible;
+                }
+                ul{
+                    visibility: hidden;
+                }
+            }
+        }
+        .content{
+            img{
+                width: 300px;
+                height: 300px;
+            }
+            .text{
+                h1{
+                    font-size: 40px;
+                }
+                h2{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 13px;
+                }
+                .buttons{
+                    height: 8%;
+                }
+                .imgs{
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:767px) {
+        .content{
+            >img{
+                display: none;
+            }
+            .text{
+                width: 100%;
+                align-items: center;
+                h1{
+                    margin-bottom: 2.5%;
+                }
+                h2{
+                    margin-bottom: 7.5%;
+                }
+                p{
+                    text-align: center;
+                    line-height: 1.8;
+                }
+                .imgs{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+        }
+    }
+}
+
+#About{
+    width: 100%;
+    height: 110vh;
+    background-color: $second-bg-color;
+    padding-top: 2%;
+    @extend .pad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    @media (max-width:992px){
+        height: 70vh;
+    }
+    @media (max-width:767px){
+        height: 60vh;
+    }
+    h1{
+        @extend .title;
+        color: $text-color;
+        margin-bottom: 4%;
+    }
+    .img{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6%;
+        .circle{
+            width: 100%;
+            height: 100%;
+            animation-name: retate;
+            border-radius: 50%;
+            border: 2px $second-color solid;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            position: absolute;
+
+            @keyframes retate {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        img{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            z-index: 2;
+            border: 2px $second-color solid;
+        }
+        @media (max-width:992px) {
+            width: 150px;
+            height: 150px;
+        }
+        @media (max-width:767px){
+            width: 120px;
+            height: 120px;
+        }
+    }
+    h2{
+        font-size: 25px;
+        text-transform: capitalize;
+        color: $text-color;
+        margin-bottom: 2%;
+        @media (max-width:992px) {
+            font-size: 18px;
+        }
+        @media (max-width:767px){
+            font-size: 15px;
+        }
+    }
+    p{
+        font-size: 17.5px;
+        text-align: center;
+        color: #ededed6b;
+        line-height: 1.8;
+        margin-bottom: 2%;
+        @media (max-width:992px) {
+            font-size: 15px;
+        }
+        @media (max-width:767px) {
+            font-size: 12.5px;
+        }
+    }
+    button{
+        color: $primary-bg-color;
+        background-color: $second-color;
+        border-radius: 5px;
+        border: none;
+        width: 125px;
+        height: 40px;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: bold;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        &:hover{
+            background-color: transparent;
+            border: 2px $second-color solid;
+            color: #00abf0;
+        }
+        @media (max-width:992px) {
+            width: 110px;
+            height: 35px;
+            font-size: 13.5px;
+        }
+        @media (max-width:767px) {
+            width: 100px;
+            height: 25px;
+            font-size: 12px;
+        }
+    }
+}
+
+#Education{
+    width: 100%;
+    height: 120vh;
+    background-color: $primary-bg-color;
+    padding-top: 2%;
+    @extend .pad;
+
+    h1{
+        @extend .title;
+        margin-bottom: 2.5%;
+    }
+    .Education-content{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        >div{
+            width: 45%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            h2{
+                color: $text-color;
+                text-transform: capitalize;
+                font-size: 25px;
+            }
+            .content{
+                width: 100%;
+                height: 90%;
+                border-left: 3px $second-color solid;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                >div{
+                    width: 100%;
+                    height: 30%;
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-evenly;
+                    position: relative;
+                    padding-left: 5%;
+                    &::before{
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        background-color: $second-color;
+                        position: absolute;
+                        left: 0%;
+                        top: 0%;
+                        border-radius: 50%;
+                        transform: translate(-50%,100%);
+                    }
+                    span{
+                        font-size: 13.5px;
+                        color: $second-color;
+                    }
+                    h3{
+                        font-size: 20px;
+                        text-transform: capitalize;
+                        color: $text-color;
+                    }
+                    p{
+                        font-size: 15px;
+                        color: #ededed9c;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:992px) {
+        height: 160vh;
+        .Education-content{
+            height: 90%;
+            flex-direction: column;
+            >div{
+                width: 100%;
+                height: 45%;
+                h2{
+                    font-size: 18px;
+                }
+                >.content{
+                    >div{
+                        span{
+                            font-size: 12px;
+                            color: $second-color;
+                        }
+                        h3{
+                            font-size: 18px;
+                            text-transform: capitalize;
+                            color: $text-color;
+                        }
+                        p{
+                            font-size: 13.5px;
+                            color: #ededed9c;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:767px) {
+        height: 160vh;
+        .Education-content{
+            height: 90%;
+            flex-direction: column;
+            >div{
+                width: 100%;
+                height: 45%;
+                h2{
+                    font-size: 15px;
+                }
+                >.content{
+                    >div{
+                        span{
+                            font-size: 10px;
+                            color: $second-color;
+                        }
+                        h3{
+                            font-size: 15px;
+                            text-transform: capitalize;
+                            color: $text-color;
+                        }
+                        p{
+                            font-size: 12px;
+                            color: #ededed9c;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+#Skills{
+    width: 100%;
+    height: 70vh;
+    background-color: $second-bg-color;
+    padding-top: 2%;
+    @extend .pad;
+    
+    h1{
+        @extend .title;
+        margin-bottom: 2.5%;
+    }
+    .skills-content{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            text-transform: capitalize;
+            font-size: 25px;
+            color: $text-color;
+        }
+        >div{
+            width: 45%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            &.cod{
+                .content{
+                    width: 100%;
+                    height: 85%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    border: 2px $second-color solid;
+                    padding: 7% 2%;
+                    border-radius: 10px;
+                    >div{
+                        width: 100%;
+                        height: 10%;
+                        border: 2px $second-color solid;
+                        padding: 1%;
+                        border-radius: 5px;
+                        &.html{
+                            position: relative;
+                            >div{
+                                width: 90%;
+                                height: 100%;
+                                background-color: $second-color;
+                            }
+                            &::before{
+                                content: "html";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "90%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.css{
+                            position: relative;
+                            >div{
+                                width: 80%;
+                                height: 100%;
+                                background-color: $second-color;
+                            }
+                            &::before{
+                                content: "css";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "80%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.js{
+                            position: relative;
+                            >div{
+                                width: 65%;
+                                height: 100%;
+                                background-color: $second-color;
+                            }
+                            &::before{
+                                content: "javascripte";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "65%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.python{
+                            position: relative;
+                            >div{
+                                width: 75%;
+                                height: 100%;
+                                background-color: $second-color;
+                            }
+                            &::before{
+                                content: "python";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "75%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 13.5px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.pro{
+                .content{
+                    border: 2px $second-color solid;
+                    width: 100%;
+                    height: 85%;
+                    border-radius: 10px;
+                    padding: 7% 2%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    >div{
+                        width: 100%;
+                        height: 10%;
+                        border: 2px $second-color solid;
+                        border-radius: 5px;
+                        padding: 1%;
+                        >div{
+                            height: 100%;
+                            background-color: $second-color;
+                        }
+                        &.des{
+                            position: relative;
+                            >div{
+                                width: 95%;
+                            }
+                            &::before{
+                                content: "web design";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "95%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.dev{
+                            position: relative;
+                            >div{
+                                width: 67%;
+                            }
+                            &::before{
+                                content: "web development";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "67%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.gra{
+                            position: relative;
+                            >div{
+                                width: 85%;
+                            }
+                            &::before{
+                                content: "graphic design";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "85%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.seo{
+                            position: relative;
+                            >div{
+                                width: 60%;
+                            }
+                            &::before{
+                                content: "seo";
+                                color: $text-color;
+                                position: absolute;
+                                left: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                            &::after{
+                                content: "60%";
+                                color: $text-color;
+                                position: absolute;
+                                right: 1%;
+                                top: -100%;
+                                font-size: 12px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:992px) {
+        height: 120vh;
+        .skills-content{
+            height: 85%;
+            flex-direction: column;
+            >div{
+                width: 100%;
+                height: 45%;
+                h2{
+                    font-size: 15px;
+                }
+                >.content{
+                    >div{
+                        padding: 0.5% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Contact{
+    width: 100%;
+    height: 100vh;
+    background-color: $primary-bg-color;
+    padding-top: 2%;
+    @extend .pad;
+    
+    h1{
+        @extend .title;
+        margin-bottom: 5%;
+    }
+    form{
+        width: 80%;
+        height: 80%;
+        // background-color: red;
+        margin-left: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        input{
+            &:not([type="submit"]){
+                width: 45%;
+                height: 10%;
+                border: 3px $second-color solid;
+                background-color: transparent;
+                border-radius: 5px;
+                padding-left: 3%;
+                color: $text-color;
+                outline: none;
+                &::placeholder{
+                    text-transform: capitalize;
+                    color: #ededed9c;
+                }
+            }
+
+            &[type="submit"]{
+                width: 40%;
+                height: 10%;
+                border-radius: 20px;
+                border: none;
+                background-color: $second-color;
+                color: $primary-bg-color;
+                font-size: 20px;
+                text-transform: capitalize;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                cursor: pointer;
+                transition-duration: 0.5s;
+                font-weight: bold;
+                
+                &:hover{
+                    background-color: transparent;
+                    border: 3px $second-color solid;
+                    color: $text-color;
+                }
+            }
+        }
+        textarea{
+            width: 100%;
+            height: 40%;
+            border: 3px $second-color solid;
+            background-color: transparent;
+            border-radius: 5px;
+            padding-left: 3%;
+            padding-top: 2%;
+            outline: none;
+            color: $text-color;
+            &::placeholder{
+                text-transform: capitalize;
+                color: #ededed9c;
+            }
+        }
+    }
+    @media (max-width:767px) {
+        form{
+            input:not([type="submit"]){
+                width: 100%;
+            }
+            input[type="submit"]{
+                height: 8%;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.Footer{
+    width: 100%;
+    height: 10vh;
+    background-color: $second-bg-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @extend .pad;
+    p{
+        font-size: 17.5px;
+        text-transform: capitalize;
+        color: $text-color;
+        letter-spacing: 0.1em;
+    }
+    a{
+        width: 50px;
+        height: 50px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+    @media (max-width:992px) {
+        p{
+            font-size: 15px;
+        }
+        a{
+            width: 40px;
+            height: 40px;
+        }
+    }
+    @media (max-width:767px) {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        height: 15vh;
+        p{
+            font-size: 12px;
+            width: 60%;
+            text-align: center;
+        }
+        a{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

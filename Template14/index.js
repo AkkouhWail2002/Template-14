@@ -1,0 +1,47 @@
+document.getElementById("open").onclick=function(){
+    document.getElementById("menu").style.transform="translateX(0%)";
+    document.getElementById("close").style.display="block";
+    document.getElementById("open").style.display="none";
+}
+document.getElementById("close").onclick=function(){
+    document.getElementById("menu").style.transform="translateX(-100%)";
+    document.getElementById("close").style.display="none";
+    document.getElementById("open").style.display="block";
+}
+onscroll=function(){
+    if(scrollY>600){
+        document.getElementById("A").style.color="#ededed";
+        document.getElementById("B").style.color="#00abf0";
+        document.getElementById("C").style.color="#ededed";
+        document.getElementById("D").style.color="#ededed";
+        document.getElementById("E").style.color="#ededed";
+    }
+    if(scrollY>1200){
+        document.getElementById("A").style.color="#ededed";
+        document.getElementById("B").style.color="#ededed";
+        document.getElementById("C").style.color="#00abf0";
+        document.getElementById("D").style.color="#ededed";
+        document.getElementById("E").style.color="#ededed";
+    }
+    if(scrollY>2000){
+        document.getElementById("A").style.color="#ededed";
+        document.getElementById("B").style.color="#ededed";
+        document.getElementById("C").style.color="#ededed";
+        document.getElementById("D").style.color="#00abf0";
+        document.getElementById("E").style.color="#ededed";
+    }
+    if(scrollY>2500){
+        document.getElementById("A").style.color="#ededed";
+        document.getElementById("B").style.color="#ededed";
+        document.getElementById("C").style.color="#ededed";
+        document.getElementById("D").style.color="#ededed";
+        document.getElementById("E").style.color="#00abf0";
+    }
+    if(scrollY<600){
+        document.getElementById("A").style.color="#00abf0";
+        document.getElementById("B").style.color="#ededed";
+        document.getElementById("C").style.color="#ededed";
+        document.getElementById("D").style.color="#ededed";
+        document.getElementById("E").style.color="#ededed";
+    }
+}
